@@ -5,37 +5,39 @@ using UnityEngine;
 public class DrawLine : MonoBehaviour
 {
     private LineRenderer lineRenderer;
-    //[SerializeField] private int resolution = 200;
+    [SerializeField] private int pointsPerUnit = 50;
+    [SerializeField] private int length = 20;
+    [SerializeField] private int speed = 1;
+    private float increment;
 
     // Start is called before the first frame update
     void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
-        GenerateCollider(Draw(new Vector3(0, 0, 0), 1000, 4, 2, 0));
+        increment = 1f / pointsPerUnit;
     }
 
     
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        //Draw(new Vector3(-10, 0, 0), 2000, 4, 2, 5);
+        GenerateCollider(Draw(new Vector3(-length / 2.0f, 0.0f, 0.0f), length, 4, 1f, speed));
     }
 
 
-    List<Vector2> Draw(Vector3 startPoint, int n, float wavelength, int amplitude, int speed)
+    List<Vector2> Draw(Vector3 startPoint, int length, float wavelength, float amplitude, int speed)
     {
         List<Vector2> points = new List<Vector2>();
         float x = 0f;
         float y;
-        float k = 2 * Mathf.PI / wavelength;
-        lineRenderer.positionCount = n;
-        for (int i = 0; i < n; i++)
+        lineRenderer.positionCount = length * pointsPerUnit;
+        for (int i = 0; i < lineRenderer.positionCount; i++)
         {
-            x += 0.0001f * i;
-            y = amplitude * Mathf.Sin(k * x + (k * speed * Time.time));
+            x += increment;
+            y = SinLine(x, amplitude, wavelength, speed);
             lineRenderer.SetPosition(i, new Vector3(x, y, 0) + startPoint);
-            points.Add(new Vector2(x, y));
+            points.Add(new Vector2(x + startPoint.x, y + startPoint.y));
         }
         return points;
     }
@@ -47,4 +49,11 @@ public class DrawLine : MonoBehaviour
         collider.SetPoints(points);
 
     }
+
+    float SinLine(float x, float amplitude, float wavelength, int speed)
+    {
+        float k = 2 * Mathf.PI / wavelength;
+        return amplitude * Mathf.Sin(k * x + (k * speed * Time.time));
+    }
 }
+
