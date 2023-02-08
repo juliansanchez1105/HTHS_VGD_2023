@@ -50,4 +50,14 @@ public class PlayerControl : MonoBehaviour
         }
 
     }
+
+    public void timeStop()
+    {
+        Time.timeScale = 0.0f;
+    }
+
+    public void timeStart()
+    {
+        Time.timeScale = 1.0f;
+    }
 }
