@@ -7,7 +7,6 @@ public class DrawSecondDegreePolynomial : MonoBehaviour
     private LineRenderer lineRenderer;
     [SerializeField] private float domainStart = -5.0f;
     [SerializeField] private float domainEnd = 5.0f;
-    [SerializeField] private int pointsPerUnit = 50;
     [SerializeField] private float A = 1.0f;
     [SerializeField] private float B = 0.0f;
     [SerializeField] private float C = -1.0f;
@@ -19,7 +18,6 @@ public class DrawSecondDegreePolynomial : MonoBehaviour
     void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
-        increment = 1f / pointsPerUnit;
     }
 
     
@@ -36,7 +34,7 @@ public class DrawSecondDegreePolynomial : MonoBehaviour
         List<Vector2> points = new List<Vector2>();
         float x = domainStart;
         float y;
-        lineRenderer.positionCount = (int)(domainEnd-domainStart) * pointsPerUnit;
+        lineRenderer.positionCount = (int)((domainEnd-domainStart) * (1/increment));
         for (int i = 0; i < lineRenderer.positionCount; i++)
         {
             x += increment;

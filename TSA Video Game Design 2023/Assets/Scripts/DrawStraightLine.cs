@@ -9,7 +9,6 @@ public class DrawStraightLine : MonoBehaviour
     [SerializeField] private float domainEnd = 5.0f;
     [SerializeField] private float m = 1.0f; //slope
     [SerializeField] private float b = 20.0f; //y-intercept
-    [SerializeField] private int pointsPerUnit = 50;
     //private int length = domainEnd-domainStart;
     private float increment;
 
@@ -18,7 +17,7 @@ public class DrawStraightLine : MonoBehaviour
     void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
-        increment = 1f / pointsPerUnit;
+        increment = 0.01f;
     }
 
     
@@ -35,7 +34,7 @@ public class DrawStraightLine : MonoBehaviour
         List<Vector2> points = new List<Vector2>();
         float x = domainStart;
         float y;
-        lineRenderer.positionCount = (int)(domainEnd-domainStart) * pointsPerUnit;
+        lineRenderer.positionCount = (int)((domainEnd-domainStart) * (1/increment));
         for (int i = 0; i < lineRenderer.positionCount; i++)
         {
             x += increment;

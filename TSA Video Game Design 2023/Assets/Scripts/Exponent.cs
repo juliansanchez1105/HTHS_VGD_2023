@@ -2,23 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DrawThirdDegreePolynomial : MonoBehaviour
+public class Exponent : MonoBehaviour
 {
     private LineRenderer lineRenderer;
     [SerializeField] private float domainStart = -5.0f;
     [SerializeField] private float domainEnd = 5.0f;
-    [SerializeField] private float A = 1.0f;
-    [SerializeField] private float B = 0.0f;
-    [SerializeField] private float C = 0.0f;
-    [SerializeField] private float D = -1.0f;
+    [SerializeField] private float a = 1.0f;
+    [SerializeField] private float b = 20.0f; //horizontal shift
+    [SerializeField] private float c = 20.0f; //vertical shift
+    //[SerializeField] private int pointsPerUnit = 50;
     //private int length = domainEnd-domainStart;
-    private float increment = 0.01f;
+    private float increment;
 
 
     // Start is called before the first frame update
     void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
+        increment = 0.01f;
     }
 
     
@@ -35,11 +36,11 @@ public class DrawThirdDegreePolynomial : MonoBehaviour
         List<Vector2> points = new List<Vector2>();
         float x = domainStart;
         float y;
-        lineRenderer.positionCount = (int)((domainEnd-domainStart) * (1/increment));
+        lineRenderer.positionCount = (int)((domainEnd-domainStart)*(1/increment));
         for (int i = 0; i < lineRenderer.positionCount; i++)
         {
             x += increment;
-            y = (A*x*x*x+B*x*x+C*x+D);
+            y = Mathf.Pow(a,(x-b))+c;
             lineRenderer.SetPosition(i, new Vector3(x, y, 0));
             points.Add(new Vector2(x, y));
         }
@@ -54,4 +55,3 @@ public class DrawThirdDegreePolynomial : MonoBehaviour
     }
 }
 
-    
