@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 
 
-public class AddFunction : MonoBehaviour
+public class addFunction : MonoBehaviour
 {
     //string m_Message;
     //public Text m_Text;
