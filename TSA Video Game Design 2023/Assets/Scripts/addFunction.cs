@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 
-public class DropdownMenu : MonoBehaviour
+public class AddFunction : MonoBehaviour
 {
     //string m_Message;
     //public Text m_Text;
-    [SerializeField] private GameObject dropdown;
-    int m_DropdownValue; //index
+    [SerializeField] private TMPro.TMP_Dropdown dropdown;
+    private int m_DropdownValue; //index
+    private string functionType;
 
 
     // Start is called before the first frame update
@@ -22,9 +24,12 @@ public class DropdownMenu : MonoBehaviour
 
     public void add()
     {
-        m_DropdownValue = dropdown.GetComponent<Dropdown>().value;
+        m_DropdownValue = dropdown.GetComponent<TMP_Dropdown>().value;
         Debug.Log("Dropdown Value : " + m_DropdownValue); 
         //m_Message = m_Dropdown.options[m_DropdownValue].text;
         //m_Text.text = m_Message;
+
+        functionType = dropdown.GetComponent<TMP_Dropdown>().options[m_DropdownValue].text;
+        Debug.Log("Function Type: " + functionType);
     }
 }
