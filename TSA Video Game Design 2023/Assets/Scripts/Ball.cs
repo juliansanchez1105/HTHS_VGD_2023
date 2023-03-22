@@ -22,8 +22,12 @@ public class Ball : MonoBehaviour
     {
         if(transform.position.y <= deathValY || transform.position.x >= deathValX || transform.position.x <= -1 * deathValX)
         {
-            rb.velocity = new Vector3(0, 0, 0);
-            transform.position = spawnPoint;
+            Respawn();
         }
+    }
+
+    public void Respawn(){
+        rb.velocity = new Vector3(0, 0, 0);
+        transform.position = spawnPoint;
     }
 }
