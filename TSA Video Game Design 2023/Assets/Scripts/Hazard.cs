@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Hazard : MonoBehaviour
 {
+    [SerializeField] private Environment environ;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +22,7 @@ public class Hazard : MonoBehaviour
         if(collision.gameObject.name == "Ball"){
             //Debug.Log("BOOM");
             //ADD death animation here
-            collision.gameObject.GetComponent<Ball>().Respawn();
+            environ.CallRespawn();
         }
     }
 }

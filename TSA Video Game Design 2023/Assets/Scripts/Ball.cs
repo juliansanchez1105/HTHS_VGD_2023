@@ -7,6 +7,8 @@ public class Ball : MonoBehaviour
     [SerializeField] private int deathValY = -10;
     [SerializeField] private int deathValX = 30;
     [SerializeField] private GameObject SpawnObject;
+    [SerializeField] private PlayerControl manager;
+    [SerializeField] private Environment environ;
     private Vector3 spawnPoint;
     private Rigidbody2D rb;
     // Start is called before the first frame update
@@ -22,12 +24,13 @@ public class Ball : MonoBehaviour
     {
         if(transform.position.y <= deathValY || transform.position.x >= deathValX || transform.position.x <= -1 * deathValX)
         {
-            Respawn();
+            environ.CallRespawn();
         }
     }
 
     public void Respawn(){
         rb.velocity = new Vector3(0, 0, 0);
         transform.position = spawnPoint;
+        manager.timeStop();
     }
 }

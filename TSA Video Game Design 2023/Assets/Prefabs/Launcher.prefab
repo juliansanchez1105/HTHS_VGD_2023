@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6099073119789686406}
   - component: {fileID: 6099073119789686407}
   m_Layer: 0
-  m_Name: Accelerator
+  m_Name: Launcher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

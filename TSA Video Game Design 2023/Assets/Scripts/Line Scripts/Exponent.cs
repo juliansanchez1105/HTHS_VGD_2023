@@ -20,6 +20,7 @@ public class Exponent : MonoBehaviour
     {
         lineRenderer = GetComponent<LineRenderer>();
         increment = 0.01f;
+        //GenerateCollider(Draw(new Vector3(domainStart, 0.0f, 0.0f)));
     }
 
     
@@ -50,6 +51,7 @@ public class Exponent : MonoBehaviour
     void GenerateCollider(List<Vector2> points)
     {
         EdgeCollider2D collider = GetComponent<EdgeCollider2D>();
+        // collider.enabled = true;
         collider.SetPoints(points);
 
     }

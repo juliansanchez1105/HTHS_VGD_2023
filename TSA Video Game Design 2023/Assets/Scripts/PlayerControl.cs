@@ -9,6 +9,8 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] private float maxZoom = 20f;
     [SerializeField] private int zoomFactor = 5;
     [SerializeField] private float sensitivity = 1.0f;
+    [SerializeField] private GameObject startButton;
+    [SerializeField] private GameObject pauseButton;
     private Vector3 originalMousePos;
 
     // Start is called before the first frame update
@@ -54,10 +56,15 @@ public class PlayerControl : MonoBehaviour
     public void timeStop()
     {
         Time.timeScale = 0.0f;
+        pauseButton.SetActive(false);
+        startButton.SetActive(true);
+
     }
 
     public void timeStart()
     {
         Time.timeScale = 1.0f;
+        startButton.SetActive(true);
+        pauseButton.SetActive(false);
     }
 }
