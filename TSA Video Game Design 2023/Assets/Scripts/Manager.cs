@@ -14,7 +14,7 @@ public class Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(worldObjects);
+        //Debug.Log(worldObjects);
         for(int i = 0; i < worldObjects.transform.childCount; i++)
         {
             //Debug.Log(worldObjects.transform.GetChild(i).gameObject);

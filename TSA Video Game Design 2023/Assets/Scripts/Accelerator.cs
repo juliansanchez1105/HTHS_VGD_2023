@@ -7,10 +7,6 @@ public class Accelerator : MonoBehaviour
     private Vector2 direction;
     [SerializeField] private float exitSpeed;
     // Start is called before the first frame update
-    void Start()
-    {
-        Debug.Log(transform.up);
-    }
 
     // Update is called once per frame
     void Update()
