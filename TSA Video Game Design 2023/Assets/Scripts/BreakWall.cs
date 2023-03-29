@@ -25,7 +25,7 @@ public class BreakWall : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.name == "Ball" && preVelocity.magnitude >= critVelocity){
+        if(collision.gameObject.tag == "Player" && preVelocity.magnitude >= critVelocity){
             //Debug.Log("BOOM");
             //ADD crash animation here
             gameObject.SetActive(false);

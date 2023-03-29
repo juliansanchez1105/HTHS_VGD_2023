@@ -18,7 +18,7 @@ public class GravitySwitch : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if(collider.gameObject.name == "Ball"){
+        if(collider.gameObject.tag == "Player"){
             //Debug.Log("VWOOM");
             collider.gameObject.GetComponent<Rigidbody2D>().gravityScale *= -1;
             //Flip sprite to show direction of gravity

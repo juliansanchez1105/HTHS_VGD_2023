@@ -24,6 +24,9 @@ public class EquationField : MonoBehaviour, IDropHandler
             //Debug.Log(GetComponent<RectTransform>().anchoredPosition);
             //Debug.Log(GetComponent<RectTransform>().position);
 
+            //Remove Line
+            eventData.pointerDrag.GetComponent<Line>().LineActive(false);
+
         }
     }
 

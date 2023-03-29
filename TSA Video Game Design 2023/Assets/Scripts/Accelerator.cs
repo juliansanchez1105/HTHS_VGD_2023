@@ -15,7 +15,7 @@ public class Accelerator : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D collider){
-        if(collider.gameObject.name == "Ball"){
+        if(collider.gameObject.tag == "Player"){
             collider.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
             collider.gameObject.GetComponent<Transform>().position = transform.position;
 

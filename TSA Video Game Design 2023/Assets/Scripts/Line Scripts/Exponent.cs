@@ -20,7 +20,7 @@ public class Exponent : MonoBehaviour
     {
         lineRenderer = GetComponent<LineRenderer>();
         increment = 0.01f;
-        //GenerateCollider(Draw(new Vector3(domainStart, 0.0f, 0.0f)));
+        GenerateLine();
     }
 
     
@@ -28,6 +28,10 @@ public class Exponent : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        GenerateLine();
+    }
+
+    public void GenerateLine(){
         GenerateCollider(Draw(new Vector3(domainStart, 0.0f, 0.0f)));
     }
 
@@ -55,5 +59,7 @@ public class Exponent : MonoBehaviour
         collider.SetPoints(points);
 
     }
+
+
 }
 

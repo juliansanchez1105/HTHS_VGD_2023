@@ -33,6 +33,9 @@ public class EquationSlot : MonoBehaviour, IDropHandler
             //Debug.Log(GetComponent<RectTransform>().position);
 
             rTransform.sizeDelta = new Vector2(dropTransform.sizeDelta.x, rTransform.sizeDelta.y);
+
+            //Draw Line
+            eventData.pointerDrag.GetComponent<Line>().LineActive(true);
         }
     }
 

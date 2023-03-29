@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -11,11 +12,27 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] private float sensitivity = 1.0f;
     [SerializeField] private GameObject startButton;
     [SerializeField] private GameObject pauseButton;
+    [SerializeField] private GameObject mouseCoords;
+    [SerializeField] private RectTransform canvasRect;
+    [SerializeField] private GameObject ball;
+    [SerializeField] private GameObject levelGoal;
+    [SerializeField] private GameObject winScreen;
+    [SerializeField] private float winScreenDelay = 3;
+    private Vector2 WorldUnitsInCamera;
+    private Vector2 WorldToPixelAmount;
     private Vector3 originalMousePos;
 
     // Start is called before the first frame update
     void Start()
     {
+        //Finding Pixel To World Unit Conversion Based On Orthographic Size Of Camera
+        WorldUnitsInCamera.y = mainCamera.GetComponent<Camera>().orthographicSize * 2;
+        WorldUnitsInCamera.x = WorldUnitsInCamera.y * Screen.width / Screen.height;
+ 
+        WorldToPixelAmount.x = Screen.width / WorldUnitsInCamera.x;
+        WorldToPixelAmount.y = Screen.height / WorldUnitsInCamera.y;
+
+
         timeStop();
     }
 
@@ -39,6 +56,8 @@ public class PlayerControl : MonoBehaviour
             }
         }*/
 
+        mouseCoords.GetComponent<TMP_Text>().text = string.Format("X: {0:.0}\nY: {1:.0}", (ConvertToWorldUnits(Input.mousePosition).x), ConvertToWorldUnits(Input.mousePosition).y);
+
         if(Input.GetKeyDown(KeyCode.Mouse1))
         {
             originalMousePos = Input.mousePosition;
@@ -52,6 +71,21 @@ public class PlayerControl : MonoBehaviour
         }
 
     }
+ 
+ 
+    //Taking Your Camera Location And Is Off Setting For Position And For Amount Of World Units In Camera
+    private Vector2 ConvertToWorldUnits(Vector2 TouchLocation)
+    {
+        Vector2 returnVec2;
+    
+        returnVec2.x = ((TouchLocation.x / WorldToPixelAmount.x) - (WorldUnitsInCamera.x / 2)) +
+        mainCamera.transform.position.x;
+        returnVec2.y = ((TouchLocation.y / WorldToPixelAmount.y) - (WorldUnitsInCamera.y / 2)) +
+        mainCamera.transform.position.y;
+    
+        return returnVec2;
+    }
+    
 
     public void timeStop()
     {
@@ -66,5 +100,12 @@ public class PlayerControl : MonoBehaviour
         Time.timeScale = 1.0f;
         startButton.SetActive(true);
         pauseButton.SetActive(false);
+    }
+
+    public void levelWon(){
+        Debug.Log("Level Complete");
+        ball.transform.position = levelGoal.transform.position;
+        timeStop();
+        winScreen.GetComponent<WinScreen>().Invoke("OpenScreen", winScreenDelay);
     }
 }

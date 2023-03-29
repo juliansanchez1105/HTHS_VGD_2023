@@ -34,4 +34,12 @@ public class Ball : MonoBehaviour
         GetComponent<Rigidbody2D>().gravityScale = Mathf.Abs(GetComponent<Rigidbody2D>().gravityScale);
         manager.timeStop();
     }
+
+    public int DeathValX{
+        get{return deathValX;}
+    }
+
+    public int DeathValY{
+        get{return deathValY;}
+    }
 }
