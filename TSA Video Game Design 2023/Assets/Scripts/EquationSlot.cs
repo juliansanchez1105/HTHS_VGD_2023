@@ -8,6 +8,7 @@ public class EquationSlot : MonoBehaviour, IDropHandler
     private RectTransform rTransform;
     private RectTransform dropTransform;
     [SerializeField] private GameObject parent;
+    [SerializeField] private PlayerControl manager;
     private float ogWidth;
     private float ogHeight;
     private float ogParentWidth;
@@ -22,7 +23,7 @@ public class EquationSlot : MonoBehaviour, IDropHandler
     public void OnDrop(PointerEventData eventData)
     {
         //Debug.Log("OnDrop");
-        if (eventData.pointerDrag != null)
+        if (eventData.pointerDrag.gameObject.tag == "Draggable")
         {
             dropTransform = eventData.pointerDrag.GetComponent<RectTransform>();
             dropTransform.SetParent(rTransform);
@@ -33,6 +34,9 @@ public class EquationSlot : MonoBehaviour, IDropHandler
             //Debug.Log(GetComponent<RectTransform>().position);
 
             rTransform.sizeDelta = new Vector2(dropTransform.sizeDelta.x, rTransform.sizeDelta.y);
+
+            //Draw Line
+            eventData.pointerDrag.GetComponent<Line>().LineActive(true);
         }
     }
 
@@ -47,5 +51,9 @@ public class EquationSlot : MonoBehaviour, IDropHandler
             parent.GetComponent<RectTransform>().sizeDelta = new Vector2(ogParentWidth - ogWidth + rTransform.sizeDelta.x, ogParentHeight);
             //Debug.Log(parent.GetComponent<RectTransform>().sizeDelta);
         }
+
+        //Change bool only when game is running or paused in the middle of running
+        PlayerControl.restartBool = true;
+        manager.timeStop();
     }
 }

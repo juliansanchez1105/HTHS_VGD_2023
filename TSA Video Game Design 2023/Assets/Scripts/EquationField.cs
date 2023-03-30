@@ -13,7 +13,7 @@ public class EquationField : MonoBehaviour, IDropHandler
     public void OnDrop(PointerEventData eventData)
     {
         //Debug.Log("OnDrop");
-        if (eventData.pointerDrag != null)
+        if (eventData.pointerDrag.gameObject.tag == "Draggable")
         {
             dropTransform = eventData.pointerDrag.GetComponent<RectTransform>();
             dropTransform.SetParent(rTransform);
@@ -23,6 +23,9 @@ public class EquationField : MonoBehaviour, IDropHandler
             eventData.pointerDrag.GetComponent<DragDrop>().Snapped();
             //Debug.Log(GetComponent<RectTransform>().anchoredPosition);
             //Debug.Log(GetComponent<RectTransform>().position);
+
+            //Remove Line
+            eventData.pointerDrag.GetComponent<Line>().LineActive(false);
 
         }
     }

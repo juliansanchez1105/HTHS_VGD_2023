@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GravitySwitch : MonoBehaviour
+public class LaserSwitch : MonoBehaviour
 {
+    [SerializeField] private GameObject laser;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +21,12 @@ public class GravitySwitch : MonoBehaviour
     {
         if(collider.gameObject.tag == "Player"){
             //Debug.Log("VWOOM");
-            collider.gameObject.GetComponent<Rigidbody2D>().gravityScale *= -1;
+            laser.transform.Find("FirePoint").gameObject.SetActive(false);
             //Flip sprite to show direction of gravity
         }
+    }
+
+    public void Respawn(){
+        laser.transform.Find("FirePoint").gameObject.SetActive(true);
     }
 }
