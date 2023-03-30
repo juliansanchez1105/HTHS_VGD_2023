@@ -36,7 +36,6 @@ public class Manager : MonoBehaviour
     }
 
     public void LoadWorld(int num){
-        Debug.Log("loading world 1");
         SceneManager.LoadScene(num);
 
     }

@@ -31,7 +31,7 @@ public class BreakWall : MonoBehaviour
             breaking.gameObject.SetActive(true);
             breaking.Play();
             gameObject.SetActive(false);
-            ballBody.velocity = preVelocity;
+            ballBody.velocity = preVelocity * new Vector2(0.75f, 0.75f);
         }
     }
 }

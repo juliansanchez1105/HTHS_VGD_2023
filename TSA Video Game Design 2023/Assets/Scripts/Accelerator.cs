@@ -18,7 +18,6 @@ public class Accelerator : MonoBehaviour
         if(collider.gameObject.tag == "Player"){
             collider.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 0, 0);
             collider.gameObject.GetComponent<Transform>().position = transform.position;
-
             collider.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(transform.up.x * exitSpeed, transform.up.y * exitSpeed, 0);
         }
     }
