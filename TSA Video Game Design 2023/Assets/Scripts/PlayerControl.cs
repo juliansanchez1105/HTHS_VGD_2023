@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class PlayerControl : MonoBehaviour
@@ -17,14 +18,20 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] private GameObject ball;
     [SerializeField] private GameObject levelGoal;
     [SerializeField] private GameObject winScreen;
-    [SerializeField] private float winScreenDelay = 3;
+    [SerializeField] private Sprite restart;
+    [SerializeField] private Sprite play;
+    [SerializeField] private Environment environment;
+    //[SerializeField] private float winScreenDelay = 3;
     private Vector2 WorldUnitsInCamera;
     private Vector2 WorldToPixelAmount;
     private Vector3 originalMousePos;
+    public static bool restartBool;
 
     // Start is called before the first frame update
     void Start()
     {
+        restartBool = false;
+        startButton.GetComponent<Image>().sprite = play;
         //Finding Pixel To World Unit Conversion Based On Orthographic Size Of Camera
         WorldUnitsInCamera.y = mainCamera.GetComponent<Camera>().orthographicSize * 2;
         WorldUnitsInCamera.x = WorldUnitsInCamera.y * Screen.width / Screen.height;
@@ -91,21 +98,33 @@ public class PlayerControl : MonoBehaviour
     {
         Time.timeScale = 0.0f;
         pauseButton.SetActive(false);
+        if(restartBool){
+            startButton.GetComponent<Image>().sprite = restart;
+        }
+        else{
+            startButton.GetComponent<Image>().sprite = play;
+        }
         startButton.SetActive(true);
-
     }
 
     public void timeStart()
     {
+        if(restartBool){
+            environment.CallRespawn();
+        }
         Time.timeScale = 1.0f;
-        startButton.SetActive(true);
-        pauseButton.SetActive(false);
+        startButton.SetActive(false);
+        pauseButton.SetActive(true);
+        restartBool = false;
     }
+
+
 
     public void levelWon(){
         Debug.Log("Level Complete");
         ball.transform.position = levelGoal.transform.position;
         timeStop();
-        winScreen.GetComponent<WinScreen>().Invoke("OpenScreen", winScreenDelay);
+        //Insert Animation here
+        winScreen.GetComponent<WinScreen>().OpenScreen();
     }
 }

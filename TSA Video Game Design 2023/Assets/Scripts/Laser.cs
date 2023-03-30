@@ -48,4 +48,5 @@ public class Laser : MonoBehaviour
         collider.size = new Vector2(distance, colliderWidth);
         collider.offset = new Vector2(0.5f * distance, 0);
     }
+
 }

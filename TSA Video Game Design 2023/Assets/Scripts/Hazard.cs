@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Hazard : MonoBehaviour
 {
-    [SerializeField] private Environment environ;
+    [SerializeField] private PlayerControl manager;
+    [SerializeField] private Ball ball;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,9 @@ public class Hazard : MonoBehaviour
         if(collision.gameObject.tag == "Player"){
             //Debug.Log("BOOM");
             //ADD death animation here
-            environ.CallRespawn();
+            PlayerControl.restartBool = true;
+            ball.Death();
+            manager.timeStop();
         }
     }
 }

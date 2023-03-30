@@ -9,11 +9,13 @@ public class Ball : MonoBehaviour
     [SerializeField] private GameObject SpawnObject;
     [SerializeField] private PlayerControl manager;
     [SerializeField] private Environment environ;
+    [SerializeField] private ParticleSystem death;
     private Vector3 spawnPoint;
     private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
+        death.gameObject.SetActive(false);
         rb = GetComponent<Rigidbody2D>();
         spawnPoint = SpawnObject.transform.position;
         transform.position = spawnPoint;
@@ -24,7 +26,9 @@ public class Ball : MonoBehaviour
     {
         if(transform.position.y <= deathValY || transform.position.x >= deathValX || transform.position.x <= -1 * deathValX)
         {
-            environ.CallRespawn();
+            PlayerControl.restartBool = true;
+            Death();
+            manager.timeStop();
         }
     }
 
@@ -32,7 +36,12 @@ public class Ball : MonoBehaviour
         rb.velocity = new Vector3(0, 0, 0);
         transform.position = spawnPoint;
         GetComponent<Rigidbody2D>().gravityScale = Mathf.Abs(GetComponent<Rigidbody2D>().gravityScale);
-        manager.timeStop();
+        death.gameObject.SetActive(false);
+    }
+
+    public void Death(){
+        death.gameObject.SetActive(true);
+        death.Play();
     }
 
     public int DeathValX{
