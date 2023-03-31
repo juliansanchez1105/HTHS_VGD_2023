@@ -5,10 +5,12 @@ using UnityEngine;
 public class LaserSwitch : MonoBehaviour
 {
     [SerializeField] private GameObject laser;
+    //private bool laserBool;
+    //[SerializeField] float delay = 3;
     // Start is called before the first frame update
     void Start()
     {
-        
+        //laserBool = false;
     }
 
     // Update is called once per frame
@@ -24,9 +26,16 @@ public class LaserSwitch : MonoBehaviour
             laser.transform.Find("FirePoint").gameObject.SetActive(false);
             //Flip sprite to show direction of gravity
         }
+        /*if(laserBool){
+            Invoke("LaserOn", delay);
+        }*/
+    }
+
+    public void LaserOn(){
+        laser.transform.Find("FirePoint").gameObject.SetActive(true);
     }
 
     public void Respawn(){
-        laser.transform.Find("FirePoint").gameObject.SetActive(true);
+        LaserOn();
     }
 }
