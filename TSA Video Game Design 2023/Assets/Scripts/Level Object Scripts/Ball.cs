@@ -26,7 +26,6 @@ public class Ball : MonoBehaviour
     {
         if(transform.position.y <= deathValY || transform.position.x >= deathValX || transform.position.x <= -1 * deathValX)
         {
-            PlayerControl.restartBool = true;
             Death();
             manager.timeStop();
         }
@@ -42,6 +41,7 @@ public class Ball : MonoBehaviour
     public void Death(){
         death.gameObject.SetActive(true);
         death.Play();
+        environ.CallRespawn();
     }
 
     public int DeathValX{

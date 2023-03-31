@@ -9,6 +9,7 @@ public class EquationSlot : MonoBehaviour, IDropHandler
     private RectTransform dropTransform;
     [SerializeField] private GameObject parent;
     [SerializeField] private PlayerControl manager;
+    [SerializeField] private Ball ball;
     private float ogWidth;
     private float ogHeight;
     private float ogParentWidth;
@@ -52,8 +53,7 @@ public class EquationSlot : MonoBehaviour, IDropHandler
             //Debug.Log(parent.GetComponent<RectTransform>().sizeDelta);
         }
 
-        //Change bool only when game is running or paused in the middle of running
-        PlayerControl.restartBool = true;
         manager.timeStop();
+        ball.Death();
     }
 }

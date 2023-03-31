@@ -7377,6 +7377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 1189456293}
   manager: {fileID: 2045049121}
+  ball: {fileID: 643926981}
 --- !u!114 &475640782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8364,6 +8365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laser: {fileID: 237726484}
+  delay: 1.5
 --- !u!61 &632580898
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22775,6 +22777,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 230484454}
   manager: {fileID: 2045049121}
+  ball: {fileID: 643926981}
 --- !u!114 &1644844137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23605,6 +23608,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 1978404084}
   manager: {fileID: 2045049121}
+  ball: {fileID: 643926981}
 --- !u!114 &1864534442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24350,8 +24354,6 @@ MonoBehaviour:
   ball: {fileID: 643926976}
   levelGoal: {fileID: 429725143}
   winScreen: {fileID: 1476901716}
-  restart: {fileID: 21300000, guid: 13dde10c3be966d4991bca9eeeb77970, type: 3}
-  play: {fileID: 21300000, guid: 741e6ce745abfea4982532cc4d436dcf, type: 3}
   environment: {fileID: 1507227706}
 --- !u!4 &2045049122
 Transform:
