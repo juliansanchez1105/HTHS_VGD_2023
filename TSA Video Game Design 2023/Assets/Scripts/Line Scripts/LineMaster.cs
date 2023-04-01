@@ -3,24 +3,20 @@ using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
 
-public class LineMaster : MonoBehaviour
+public abstract class LineMaster : MonoBehaviour
 {
-    private LineRenderer lineRenderer;
-    private float increment;
-    [SerializeField] private float domainStart = -5.0f;
-    [SerializeField] private float domainEnd = 5.0f;
-    [SerializeField] private List<TMPro.TMP_InputField> inputs; //inputs from function
+    public abstract float DomainStart();
+    public abstract float DomainEnd();
+    public abstract LineRenderer LineRender();
+    public abstract float IncrementGet();
+    public abstract EdgeCollider2D Collider();
+    public abstract float Equation(float x);
     // Start is called before the first frame update
-    void Start()
-    {
-        lineRenderer = GetComponent<LineRenderer>();
-        increment = 0.01f;
-    }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        GenerateCollider(Draw(new Vector3(domainStart, 0.0f, 0.0f)));
+        GenerateCollider(Draw(new Vector3(DomainStart(), 0.0f, 0.0f)));
     }
 
     List<Vector2> Draw(Vector3 startPoint)
@@ -29,14 +25,14 @@ public class LineMaster : MonoBehaviour
         
 
         List<Vector2> points = new List<Vector2>();
-        float x = domainStart;
+        float x = DomainStart();
         float y;
-        lineRenderer.positionCount = (int)((domainEnd-domainStart) * (1/increment));
-        for (int i = 0; i < lineRenderer.positionCount; i++)
+        LineRender().positionCount = (int)((DomainEnd()-DomainStart()) * (1/IncrementGet()));
+        for (int i = 0; i < LineRender().positionCount; i++)
         {
-            x += increment;
-            y = Exponent(x);
-            lineRenderer.SetPosition(i, new Vector3(x, y, 0));
+            x += IncrementGet();
+            y = Equation(x);
+            LineRender().SetPosition(i, new Vector3(x, y, 0));
             points.Add(new Vector2(x, y));
         }
         
@@ -45,18 +41,8 @@ public class LineMaster : MonoBehaviour
 
     void GenerateCollider(List<Vector2> points)
     {
-        EdgeCollider2D collider = GetComponent<EdgeCollider2D>();
-        collider.SetPoints(points);
+        Collider().SetPoints(points);
 
     }
 
-    private float Exponent(float x){
-        float a = float.Parse(inputs[0].text, CultureInfo.InvariantCulture.NumberFormat);
-        float b = float.Parse(inputs[1].text, CultureInfo.InvariantCulture.NumberFormat);
-        float k = float.Parse(inputs[2].text, CultureInfo.InvariantCulture.NumberFormat);
-        float d = float.Parse(inputs[3].text, CultureInfo.InvariantCulture.NumberFormat);
-        float c = float.Parse(inputs[4].text, CultureInfo.InvariantCulture.NumberFormat);
-
-        return a * Mathf.Pow(b, k * (x-d)) + c;
-    }
 }
