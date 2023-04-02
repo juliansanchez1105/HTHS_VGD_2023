@@ -1,17 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 
-public class Exponent : LineMaster
+public class Linear : LineMaster
 {
-
     private LineRenderer lineRenderer;
     private float increment;
     [SerializeField] private float domainStart = -5.0f;
     [SerializeField] private float domainEnd = 5.0f;
-    [SerializeField] private float a = 1.0f;
-    [SerializeField] private float b = 20.0f; //horizontal shift
-    [SerializeField] private float c = 20.0f; //vertical shift
+    [SerializeField] private float m = 1.0f;
+    [SerializeField] private float b = 0.0f;
+    //private int length = domainEnd-domainStart;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,8 +21,9 @@ public class Exponent : LineMaster
         increment = 0.01f;
     }
 
-    // Start is called before the first frame update
+    
 
+    
     public override float DomainStart()
     {
         return domainStart;
@@ -42,9 +45,9 @@ public class Exponent : LineMaster
     }
 
     public override float Equation(float x){
-        return Mathf.Pow(a,(x-b))+c;
+        return m*x+b;
     }
 
-
+    
 }
 

@@ -23,7 +23,6 @@ public class Hazard : MonoBehaviour
         if(collision.gameObject.tag == "Player"){
             //Debug.Log("BOOM");
             //ADD death animation here
-            PlayerControl.restartBool = true;
             ball.Death();
             manager.timeStop();
         }

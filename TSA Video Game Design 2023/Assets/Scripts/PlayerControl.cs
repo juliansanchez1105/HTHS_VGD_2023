@@ -18,20 +18,15 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] private GameObject ball;
     [SerializeField] private GameObject levelGoal;
     [SerializeField] private GameObject winScreen;
-    [SerializeField] private Sprite restart;
-    [SerializeField] private Sprite play;
     [SerializeField] private Environment environment;
     //[SerializeField] private float winScreenDelay = 3;
     private Vector2 WorldUnitsInCamera;
     private Vector2 WorldToPixelAmount;
     private Vector3 originalMousePos;
-    public static bool restartBool;
 
     // Start is called before the first frame update
     void Start()
     {
-        restartBool = false;
-        startButton.GetComponent<Image>().sprite = play;
         //Finding Pixel To World Unit Conversion Based On Orthographic Size Of Camera
         WorldUnitsInCamera.y = mainCamera.GetComponent<Camera>().orthographicSize * 2;
         WorldUnitsInCamera.x = WorldUnitsInCamera.y * Screen.width / Screen.height;
@@ -98,26 +93,15 @@ public class PlayerControl : MonoBehaviour
     {
         Time.timeScale = 0.0f;
         pauseButton.SetActive(false);
-        if(restartBool){
-            startButton.GetComponent<Image>().sprite = restart;
-        }
-        else{
-            startButton.GetComponent<Image>().sprite = play;
-        }
         startButton.SetActive(true);
     }
 
     public void timeStart()
     {
-        if(restartBool){
-            environment.CallRespawn();
-        }
         Time.timeScale = 1.0f;
         startButton.SetActive(false);
         pauseButton.SetActive(true);
-        restartBool = false;
     }
-
 
 
     public void levelWon(){
