@@ -10,6 +10,7 @@ public class Ball : MonoBehaviour
     [SerializeField] private PlayerControl manager;
     [SerializeField] private Environment environ;
     [SerializeField] private ParticleSystem death;
+    [SerializeField] private GameObject Star;
     private Vector3 spawnPoint;
     private Rigidbody2D rb;
     // Start is called before the first frame update
@@ -42,6 +43,7 @@ public class Ball : MonoBehaviour
         death.gameObject.SetActive(true);
         death.Play();
         environ.CallRespawn();
+        Star.SetActive(true);
     }
 
     public int DeathValX{

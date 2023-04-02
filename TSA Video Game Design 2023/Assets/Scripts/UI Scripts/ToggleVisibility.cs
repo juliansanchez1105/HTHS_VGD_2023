@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WinScreen : MonoBehaviour
+public class ToggleVisibility : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -10,7 +10,7 @@ public class WinScreen : MonoBehaviour
         
     }
 
-    public void OpenScreen(){
-        gameObject.SetActive(true);
+    public void TurnOff(){
+        gameObject.SetActive(false);
     }
 }

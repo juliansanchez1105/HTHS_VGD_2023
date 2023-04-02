@@ -18,6 +18,9 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] private GameObject ball;
     [SerializeField] private GameObject levelGoal;
     [SerializeField] private GameObject winScreen;
+    [SerializeField] private GameObject Canvas;
+    [SerializeField] private GameObject StarCollected;
+    [SerializeField] private GameObject StarDisplayed;
     [SerializeField] private Environment environment;
     //[SerializeField] private float winScreenDelay = 3;
     private Vector2 WorldUnitsInCamera;
@@ -107,8 +110,23 @@ public class PlayerControl : MonoBehaviour
     public void levelWon(){
         Debug.Log("Level Complete");
         ball.transform.position = levelGoal.transform.position;
-        timeStop();
-        //Insert Animation here
+        Invoke("levelWon2", 0.5f);
+
+    }
+
+    public void levelWon2(){
         winScreen.GetComponent<WinScreen>().OpenScreen();
+        Canvas.GetComponent<ToggleVisibility>().TurnOff();
+        timeStop();
+        
+        if(StarCollected.activeSelf == false){
+            StarDisplayed.SetActive(true);
+            StarCollected.SetActive(false);
+        }
+        else{
+            StarDisplayed.SetActive(false);
+            StarCollected.SetActive(true);
+        }
+        //Insert Animation here
     }
 }
