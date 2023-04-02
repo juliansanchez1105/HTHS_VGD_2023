@@ -21,6 +21,8 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] private GameObject Canvas;
     [SerializeField] private GameObject StarCollected;
     [SerializeField] private GameObject StarDisplayed;
+    [SerializeField] private GameObject Menu;
+
     [SerializeField] private Environment environment;
     //[SerializeField] private float winScreenDelay = 3;
     private Vector2 WorldUnitsInCamera;
@@ -128,5 +130,16 @@ public class PlayerControl : MonoBehaviour
             StarCollected.SetActive(true);
         }
         //Insert Animation here
+    }
+
+    public void openMenu(){
+        timeStop();
+        Canvas.SetActive(false);
+        Menu.SetActive(true);
+    }
+
+    public void resumeFromMenu(){
+        Canvas.SetActive(true);
+        Menu.SetActive(false);
     }
 }
