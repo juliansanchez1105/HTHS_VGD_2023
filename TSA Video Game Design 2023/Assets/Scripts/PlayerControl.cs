@@ -110,8 +110,7 @@ public class PlayerControl : MonoBehaviour
 
 
     public void levelWon(){
-        Debug.Log("Level Complete");
-        ball.transform.position = levelGoal.transform.position;
+        //ANIMATION
         Invoke("levelWon2", 0.5f);
 
     }
@@ -129,7 +128,6 @@ public class PlayerControl : MonoBehaviour
             StarDisplayed.SetActive(false);
             StarCollected.SetActive(true);
         }
-        //Insert Animation here
     }
 
     public void openMenu(){

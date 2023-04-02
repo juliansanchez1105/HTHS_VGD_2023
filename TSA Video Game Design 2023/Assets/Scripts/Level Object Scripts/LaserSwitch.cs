@@ -8,10 +8,17 @@ public class LaserSwitch : MonoBehaviour
     private bool laserBool;
     [SerializeField] float delay = 3;
     private float timeSincePressed;
+
+    public SpriteRenderer spriteRenderer;
+    [SerializeField] Sprite newSprite;
+    public Sprite oldSprite;
+
     // Start is called before the first frame update
     void Start()
     {
         laserBool = true;
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        oldSprite = spriteRenderer.sprite;
     }
 
     // Update is called once per frame
@@ -26,10 +33,15 @@ public class LaserSwitch : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D collider)
+    public void changeSprite(Sprite setTo){
+        spriteRenderer.sprite = setTo;
+    }
+
+    void OnCollisionEnter2D(Collision2D collider)
     {
         if(collider.gameObject.tag == "Player"){
             //Debug.Log("VWOOM");
+            changeSprite(newSprite);
             laser.transform.Find("FirePoint").gameObject.SetActive(false);
             laserBool = false;
             timeSincePressed = 0.0f;
@@ -40,6 +52,7 @@ public class LaserSwitch : MonoBehaviour
     public void LaserOn(){
         laser.transform.Find("FirePoint").gameObject.SetActive(true);
         laserBool = true;
+        changeSprite(oldSprite);
     }
 
     public void Respawn(){
