@@ -1,0 +1,33 @@
+body {
+text-align: center;
+background-color: #157ad3;
+}
+.navbar {
+background-color: #aabded;
+color: #fff;
+}
+.navbar-brand {
+margin: 0 auto;
+display: block;
+text-align: center;
+font-size: 1.5rem;
+}
+.container {
+max-width: 90%;
+height: 90%;
+margin: 0 auto;
+padding: 20px;
+background-color: #fff;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+font-size: 2.5rem;
+margin-bottom: 30px;
+color: #333;
+}
+iframe {
+width: 100%;
+height: 500px;
+border: none;
+margin-top: 20px;
+}
