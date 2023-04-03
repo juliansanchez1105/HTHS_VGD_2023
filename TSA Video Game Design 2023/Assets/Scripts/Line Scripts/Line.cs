@@ -20,4 +20,8 @@ public class Line : MonoBehaviour
     public void LineActive(bool onOff){
         lineType.SetActive(onOff);
     }
+
+    public GameObject LineType{
+        get{return lineType;}
+    }
 }

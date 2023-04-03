@@ -32,12 +32,6 @@ public class PlayerControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Finding Pixel To World Unit Conversion Based On Orthographic Size Of Camera
-        WorldUnitsInCamera.y = mainCamera.GetComponent<Camera>().orthographicSize * 2;
-        WorldUnitsInCamera.x = WorldUnitsInCamera.y * Screen.width / Screen.height;
- 
-        WorldToPixelAmount.x = Screen.width / WorldUnitsInCamera.x;
-        WorldToPixelAmount.y = Screen.height / WorldUnitsInCamera.y;
 
 
         timeStop();
@@ -84,6 +78,12 @@ public class PlayerControl : MonoBehaviour
     private Vector2 ConvertToWorldUnits(Vector2 TouchLocation)
     {
         Vector2 returnVec2;
+        //Finding Pixel To World Unit Conversion Based On Orthographic Size Of Camera
+        WorldUnitsInCamera.y = mainCamera.GetComponent<Camera>().orthographicSize * 2;
+        WorldUnitsInCamera.x = WorldUnitsInCamera.y * Screen.width / Screen.height;
+ 
+        WorldToPixelAmount.x = Screen.width / WorldUnitsInCamera.x;
+        WorldToPixelAmount.y = Screen.height / WorldUnitsInCamera.y;
     
         returnVec2.x = ((TouchLocation.x / WorldToPixelAmount.x) - (WorldUnitsInCamera.x / 2)) +
         mainCamera.transform.position.x;

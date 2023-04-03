@@ -1,38 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using System.Globalization;
 
-public class Cubic : LineMaster
+public class Cubic : LineMaster, ILine
 {
-    private LineRenderer lineRenderer;
-    private float increment;
     [SerializeField] private float domainStart = -5.0f;
     [SerializeField] private float domainEnd = 5.0f;
-    [SerializeField] private float a = 1.0f;
-    [SerializeField] private float b = 1.0f;
-    [SerializeField] private float c = 0.0f;
-    [SerializeField] private float d = 0.0f;
-    //private int length = domainEnd-domainStart;
-
-    void Start()
-    {
-        lineRenderer = GetComponent<LineRenderer>();
-        increment = 0.01f;
+    [SerializeField] private TMP_InputField aInput;
+    [SerializeField] private TMP_InputField cInput;
+    [SerializeField] private TMP_InputField dInput;
+    private float a;
+    private float c;
+    private float d;
+    // Start is called before the first frame update
+    void Start(){
+        UpdateParams();
+        MakeLine();
     }
-    public override float DomainStart()
-    {
-        return domainStart;
+    public void UpdateParams(){
+        a = float.Parse(aInput.text, CultureInfo.InvariantCulture.NumberFormat);
+        c = float.Parse(cInput.text, CultureInfo.InvariantCulture.NumberFormat);
+        d = float.Parse(dInput.text, CultureInfo.InvariantCulture.NumberFormat);
     }
-    public override float DomainEnd()
-    {
-        return domainEnd;
+    public override float DomainStart{
+        set{domainStart = value;}
+        get{return domainStart;}
     }
-    public override LineRenderer LineRender()
-    {
-        return lineRenderer;
-    }
-    public override float IncrementGet(){
-        return increment;
+    public override float DomainEnd{
+        set{domainEnd = value;}
+        get{return domainEnd;}
     }
     public override EdgeCollider2D Collider()
     {
@@ -40,7 +38,7 @@ public class Cubic : LineMaster
     }
 
     public override float Equation(float x){
-        return (a * Mathf.Pow(b * (x - c), 3) + d);
+        return (a * Mathf.Pow((x - c), 3) + d);
     }
 
 }

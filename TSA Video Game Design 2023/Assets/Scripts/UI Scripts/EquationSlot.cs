@@ -51,9 +51,14 @@ public class EquationSlot : MonoBehaviour, IDropHandler
             //Debug.Log(parent.GetComponent<RectTransform>().sizeDelta);
             parent.GetComponent<RectTransform>().sizeDelta = new Vector2(ogParentWidth - ogWidth + rTransform.sizeDelta.x, ogParentHeight);
             //Debug.Log(parent.GetComponent<RectTransform>().sizeDelta);
+            ChangeLine();
         }
 
         manager.timeStop();
         ball.Death();
+    }
+
+    public void ChangeLine(){
+        try {GetComponentInChildren<Line>().LineType.GetComponent<ILine>().MakeLine();} catch{Debug.Log("Failed to change line.");};
     }
 }
