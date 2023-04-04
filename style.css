@@ -1,74 +1,14 @@
-body {
-  text-align: center;
-  background-color: #000;
+html, body {
   margin: 0;
-}
-
-.stars {
-  height: 100vh;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-
-.stars:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 2px;
-  height: 2px;
-  background-color: #fff;
-  box-shadow:
-    0 0 2px #fff,
-    0 0 5px #fff;
-  animation: twinkle 10s infinite;
-}
-
-@keyframes twinkle {
-  0% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(100vh);
-  }
-}
-
-
-.navbar {
-  background-color: #4a8bf4;
-  color: #fff;
-}
-
-.navbar-brand {
-  margin: 0 auto;
-  display: block;
-  text-align: center;
-  font-size: 1.5rem;
-}
-
-.container {
-  max-width: 100%;
-  margin: 0;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  height: calc(100vh - 56px);
-}
-
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-  color: #333;
+  padding: 0;
+  height: 100%;
 }
 
 iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: calc(100% - 70px);
+  height: 100%;
   border: none;
-  margin-top: 20px;
 }
