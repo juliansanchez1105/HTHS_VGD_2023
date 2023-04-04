@@ -19394,8 +19394,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93ed48ebcdfa8c74792529e06ab125ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 0}
-  ball: {fileID: 0}
+  manager: {fileID: 2045049121}
+  ball: {fileID: 643926981}
 --- !u!114 &997322064
 MonoBehaviour:
   m_ObjectHideFlags: 0
