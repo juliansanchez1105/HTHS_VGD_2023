@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Title Screen.unity
     guid: 602fb66296997174185a464414415dd5
   - enabled: 1
-    path: Assets/Scenes/World 1/World 1.unity
-    guid: 82cbe7417e87dbf489773a1fbd5b9c25
-  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
@@ -21,9 +18,66 @@ EditorBuildSettings:
     path: Assets/Scenes/Settings.unity
     guid: 6854995e1487fb64b84d170e6cd40226
   - enabled: 1
+    path: Assets/Scenes/World 1/World 1.unity
+    guid: 82cbe7417e87dbf489773a1fbd5b9c25
+  - enabled: 1
     path: Assets/Scenes/World 1/Scene 1.unity
     guid: eaf9f2864ade365439607195a9b3c46a
   - enabled: 1
     path: Assets/Scenes/World 1/Scene 2.unity
+    guid: 2a8f73a4fbe5a5b4c818bd3f4ef3b2e3
+  - enabled: 0
+    path: 
     guid: 5036ad16f87a1144f832b39777f61ddc
+  - enabled: 1
+    path: Assets/Scenes/World 1/Scene 3.unity
+    guid: 636072632615f4d40968374454a57b0e
+  - enabled: 1
+    path: Assets/Scenes/World 1/Scene 4.unity
+    guid: 414437b8ff7731443b68b2c38ad70ff0
+  - enabled: 1
+    path: Assets/Scenes/World 2/World 2.unity
+    guid: 741a1c34b377ade44a202073755af05f
+  - enabled: 1
+    path: Assets/Scenes/World 2/Level 1.unity
+    guid: ccf589e97e486064497718f3b84a08d3
+  - enabled: 1
+    path: Assets/Scenes/World 2/Level 2.unity
+    guid: 243faff9cf6133748bfd3b1b84692da5
+  - enabled: 1
+    path: Assets/Scenes/World 2/Level 3.unity
+    guid: 23c9c5002e429fe44aaca9d949b48ad8
+  - enabled: 1
+    path: Assets/Scenes/World 2/Level 4.unity
+    guid: 71f33f01c77c18e46b42ac271985b4ea
+  - enabled: 1
+    path: Assets/Scenes/World 3/World 3.unity
+    guid: c4bf123daa864164c95fa4ae8918e0da
+  - enabled: 1
+    path: Assets/Scenes/World 3/Level 1.unity
+    guid: a5060a908b5eb7b48a83ada987149e69
+  - enabled: 1
+    path: Assets/Scenes/World 3/Level 2.unity
+    guid: acaaf810306485f4fa46588f1569d0e1
+  - enabled: 1
+    path: Assets/Scenes/World 3/Level 3.unity
+    guid: faa47bfb2bd870a40877a82f36f8049b
+  - enabled: 1
+    path: Assets/Scenes/World 3/Level 4.unity
+    guid: 2ec9f59b24d046248bf0e971e93f81a0
+  - enabled: 1
+    path: Assets/Scenes/World 4/World 4.unity
+    guid: beb38178406d242408da7e43b53154c2
+  - enabled: 1
+    path: Assets/Scenes/World 4/Level 1.unity
+    guid: b80526ce491231642954d40ce8d19867
+  - enabled: 1
+    path: Assets/Scenes/World 4/Level 2.unity
+    guid: e6133ec63493c56488e7d8bbda09fb32
+  - enabled: 1
+    path: Assets/Scenes/World 4/Level 3.unity
+    guid: 4aa09d799dbf28746b288d8549223c35
+  - enabled: 1
+    path: Assets/Scenes/World 4/Level 4.unity
+    guid: 0287867f513ac9446b51c886c68b34a9
   m_configObjects: {}
