@@ -19,7 +19,7 @@ public class LevelGoal : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D trigger){
         if(trigger.gameObject.tag == "Player"){
-            playerControl.levelWon();
+            playerControl.levelWon2();
         }
     }
 }

@@ -8,10 +8,12 @@ public abstract class LineMaster : MonoBehaviour
     public abstract float DomainStart{set; get;}
     public abstract float DomainEnd{set; get;}
     [SerializeField] private LineRenderer lineRenderer;
-    [SerializeField] private float increment = 0.1f;
+    [SerializeField] private float increment = 0.05f;
     public abstract EdgeCollider2D Collider();
     public abstract float Equation(float x);
     [SerializeField] private Ball ball;
+    [SerializeField] private Negation negation;
+    private bool startsNegated;
     // Start is called before the first frame update
 
 
@@ -30,6 +32,19 @@ public abstract class LineMaster : MonoBehaviour
     {
         //need to add buttons for domain, show or not show, delete
         List<Vector2> points = new List<Vector2>();
+
+        if(-1 * ball.DeathValX > DomainStart){
+            DomainStart = -1 * ball.DeathValX;
+        }
+        if(!ValidX(DomainStart) && !ValidY(Equation(DomainStart))){
+            startsNegated = true;
+        }
+        else{
+            startsNegated = false;
+        }
+        if(ball.DeathValX < DomainEnd){
+            DomainEnd = ball.DeathValX;
+        }
         float x = DomainStart;
         float y;
         lineRenderer.positionCount = (int)((DomainEnd-DomainStart) * (1/increment));
@@ -37,13 +52,17 @@ public abstract class LineMaster : MonoBehaviour
         {
             x += increment;
             y = Equation(x);
-            if(y >= -1 * ball.DeathValY && y <= ball.DeathValY){
+            if(ValidY(y) || ValidX(x)){
                 lineRenderer.SetPosition(i, new Vector3(x, y, 0));
                 points.Add(new Vector2(x, y));
             }
-            else{
+            else if(startsNegated){
                 lineRenderer.positionCount--;
                 i--;
+            }
+            else{
+                lineRenderer.positionCount = i - 1;
+                break;
             }
         }
         
@@ -54,6 +73,39 @@ public abstract class LineMaster : MonoBehaviour
     {
         Collider().SetPoints(points);
 
+    }
+
+    private bool ValidY(float y){
+        if(y > -1 * ball.DeathValY && y < ball.DeathValY){
+            if(negation){
+                if(y >= negation.TopLeft.y || y <= negation.BottomRight.y){
+                    return true;
+                }
+                else{
+                    return false;
+                }
+            }
+            else{
+                return true;
+            }
+        }
+        else{
+            return false;
+        }
+    }
+
+    private bool ValidX(float x){
+        if(negation){
+            if(x <= negation.TopLeft.x || x >= negation.BottomRight.x){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        else{
+            return true;
+        }
     }
 
 }
