@@ -28,7 +28,9 @@ public class Domain : MonoBehaviour
 
         if(slot.GetComponentInChildren<Line>().LineType.TryGetComponent(out ILine component)){
             component.DomainStart = start;
+            domainStart.text = component.DomainStart.ToString();
             component.DomainEnd = end;
+            domainEnd.text = component.DomainEnd.ToString();
         }
         else{
             Debug.Log("Failed to update Domain.");
