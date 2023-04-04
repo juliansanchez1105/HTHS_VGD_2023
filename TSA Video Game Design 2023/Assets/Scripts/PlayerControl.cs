@@ -109,11 +109,11 @@ public class PlayerControl : MonoBehaviour
     }
 
 
-    public void levelWon(){
+    /*public void levelWon(){
         //ANIMATION
         Invoke("levelWon2", 0.5f);
 
-    }
+    }*/
 
     public void levelWon2(){
         winScreen.GetComponent<WinScreen>().OpenScreen();

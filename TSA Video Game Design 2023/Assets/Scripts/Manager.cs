@@ -40,6 +40,10 @@ public class Manager : MonoBehaviour
 
     }
 
+    public void LoadAux(string name){
+        SceneManager.LoadScene(name);
+    }
+
     public void shiftLeft()
     {
         if(indexActive > 0)
