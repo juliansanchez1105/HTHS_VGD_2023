@@ -9,8 +9,8 @@ public class Negation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        topLeft = new Vector2(transform.position.x - 0.5f * transform.localScale.x, transform.position.y + 0.5f * transform.localScale.y);
-        bottomRight = new Vector2(transform.position.x + 0.5f * transform.localScale.x, transform.position.y - 0.5f * transform.localScale.y);
+        topLeft = new Vector2(transform.position.x - 0.5f * GetComponent<SpriteRenderer>().size.x, transform.position.y + 0.5f * GetComponent<SpriteRenderer>().size.y);
+        bottomRight = new Vector2(transform.position.x + 0.5f * GetComponent<SpriteRenderer>().size.x, transform.position.y - 0.5f * GetComponent<SpriteRenderer>().size.y);
         //Debug.Log(topLeft);
         //Debug.Log(bottomRight);
     }
