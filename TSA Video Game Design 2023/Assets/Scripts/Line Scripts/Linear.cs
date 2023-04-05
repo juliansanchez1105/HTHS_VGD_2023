@@ -20,6 +20,8 @@ public class Linear : LineMaster, ILine
     public void UpdateParams(){
         a = float.Parse(aInput.text, CultureInfo.InvariantCulture.NumberFormat);
         d = float.Parse(dInput.text, CultureInfo.InvariantCulture.NumberFormat);
+        Debug.Log(a);
+        Debug.Log(d);
     }
     public override float DomainStart{
         set{domainStart = value;}

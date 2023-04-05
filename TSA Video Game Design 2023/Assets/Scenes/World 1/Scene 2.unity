@@ -603,6 +603,7 @@ MonoBehaviour:
   lineRenderer: {fileID: 80988798}
   increment: 0.1
   ball: {fileID: 643926981}
+  negation: {fileID: 0}
   domainStart: -5
   domainEnd: 5
   aInput: {fileID: 469538932}
@@ -7784,7 +7785,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8099,6 +8100,7 @@ MonoBehaviour:
   lineRenderer: {fileID: 398597886}
   increment: 0.1
   ball: {fileID: 643926981}
+  negation: {fileID: 0}
   domainStart: -5
   domainEnd: 5
   aInput: {fileID: 778062188}
@@ -9349,6 +9351,7 @@ MonoBehaviour:
   lineRenderer: {fileID: 473517628}
   increment: 0.1
   ball: {fileID: 643926981}
+  negation: {fileID: 0}
   domainStart: -5
   domainEnd: 5
   aInput: {fileID: 50240199}
@@ -19812,7 +19815,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -23731,6 +23734,7 @@ MonoBehaviour:
   lineRenderer: {fileID: 1385751734}
   increment: 0.1
   ball: {fileID: 643926981}
+  negation: {fileID: 0}
   domainStart: -5
   domainEnd: 5
   aInput: {fileID: 418174054}
@@ -26906,6 +26910,7 @@ MonoBehaviour:
   lineRenderer: {fileID: 1733862633}
   increment: 0.1
   ball: {fileID: 643926981}
+  negation: {fileID: 0}
   domainStart: -5
   domainEnd: 5
   aInput: {fileID: 834605062}
