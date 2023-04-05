@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LaserSwitch : MonoBehaviour
 {
-    [SerializeField] private GameObject laser;
+    [SerializeField] private List<GameObject> lasers = new List<GameObject>();
     private bool laserBool;
     [SerializeField] float delay = 3;
     private float timeSincePressed;
@@ -42,7 +42,9 @@ public class LaserSwitch : MonoBehaviour
         if(collider.gameObject.tag == "Player"){
             //Debug.Log("VWOOM");
             changeSprite(newSprite);
-            laser.transform.Find("FirePoint").gameObject.SetActive(false);
+            foreach(GameObject laser in lasers){
+                laser.transform.Find("FirePoint").gameObject.SetActive(false);
+            }
             laserBool = false;
             timeSincePressed = 0.0f;
             //Flip sprite to show direction of gravity
@@ -50,7 +52,9 @@ public class LaserSwitch : MonoBehaviour
     }
 
     public void LaserOn(){
-        laser.transform.Find("FirePoint").gameObject.SetActive(true);
+        foreach(GameObject laser in lasers){
+            laser.transform.Find("FirePoint").gameObject.SetActive(true);
+        }
         laserBool = true;
         changeSprite(oldSprite);
     }

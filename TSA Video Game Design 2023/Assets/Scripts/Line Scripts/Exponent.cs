@@ -9,9 +9,11 @@ public class Exponent : LineMaster, ILine
     [SerializeField] private float domainStart = -5.0f;
     [SerializeField] private float domainEnd = 5.0f;
     [SerializeField] private TMP_InputField aInput;
+    [SerializeField] private TMP_InputField bInput;
     [SerializeField] private TMP_InputField cInput; //horizontal shift
     [SerializeField] private TMP_InputField dInput; //vertical shift
     private float a;
+    private float b;
     private float c; //horizontal shift
     private float d; //vertical shift
     // Start is called before the first frame update
@@ -22,6 +24,7 @@ public class Exponent : LineMaster, ILine
     public void UpdateParams(){
         a = Mathf.Abs(float.Parse(aInput.text, CultureInfo.InvariantCulture.NumberFormat));
         aInput.text = a.ToString();
+        b = float.Parse(bInput.text, CultureInfo.InvariantCulture.NumberFormat);
         c = float.Parse(cInput.text, CultureInfo.InvariantCulture.NumberFormat);
         d = float.Parse(dInput.text, CultureInfo.InvariantCulture.NumberFormat);
     }
@@ -43,7 +46,7 @@ public class Exponent : LineMaster, ILine
     }
 
     public override float Equation(float x){
-        return Mathf.Pow(a,(x-c))+d;
+        return Mathf.Pow(a,(b*x-c))+d;
     }
 
 
