@@ -56,6 +56,7 @@ public class Logarithm : LineMaster, ILine
     }
 
 
+
 }
 
 
