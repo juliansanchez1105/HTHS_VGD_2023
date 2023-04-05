@@ -34783,6 +34783,7 @@ MonoBehaviour:
   StarCollected: {fileID: 881223509}
   StarDisplayed: {fileID: 561016075}
   Menu: {fileID: 1886148294}
+  level: 0
   environment: {fileID: 1507227706}
 --- !u!4 &2045049122
 Transform:
@@ -34824,6 +34825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a816787c19e00ff4cbdb4d61c131b3d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levels: []
 --- !u!1 &2066827356
 GameObject:
   m_ObjectHideFlags: 0
@@ -35028,8 +35030,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.28350684, y: 0.20401378}
-  m_Size: {x: 2.930535, y: 2.9305356}
+  m_Offset: {x: -0.096310616, y: -0.06185913}
+  m_Size: {x: 9.463404, y: 9.463404}
   m_Direction: 0
 --- !u!50 &2069942039
 Rigidbody2D:
@@ -41536,6 +41538,7 @@ GameObject:
   - component: {fileID: 5295175442794497244}
   - component: {fileID: 5295175442794497249}
   - component: {fileID: 5295175442794497247}
+  - component: {fileID: 5295175442794497250}
   m_Layer: 0
   m_Name: Gravity Switch (1)
   m_TagString: Untagged
@@ -41607,6 +41610,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &5295175442794497250
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5295175442794497245}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.29538804, y: 0.18186896}
+  serializedVersion: 2
+  m_Radius: 1.474343
 --- !u!1 &6372374799729342696
 GameObject:
   m_ObjectHideFlags: 0
