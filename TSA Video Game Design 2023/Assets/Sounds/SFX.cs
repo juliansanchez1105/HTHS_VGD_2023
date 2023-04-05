@@ -9,7 +9,7 @@ public class SFX : MonoBehaviour
 
     public void PlayBounce(){
         src.clip = Bounce;
-        src.Play()
+        src.Play();
     }
 
     public void PlayBreak(){
