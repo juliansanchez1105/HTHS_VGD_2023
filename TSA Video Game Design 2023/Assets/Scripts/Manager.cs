@@ -11,6 +11,9 @@ public class Manager : MonoBehaviour
     private int indexActive;
     [SerializeField] private GameObject LeftWorld;
     [SerializeField] private GameObject RightWorld;
+    [SerializeField] private GameObject worldBackgrounds;
+    private List<GameObject> bgList = new List<GameObject>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,9 +22,11 @@ public class Manager : MonoBehaviour
         {
             //Debug.Log(worldObjects.transform.GetChild(i).gameObject);
             worldList.Add(worldObjects.transform.GetChild(i).gameObject);
+            bgList.Add(worldBackgrounds.transform.GetChild(i).gameObject);
             if(i != 0)
             {
                 worldList[i].SetActive(false);
+                bgList[i].SetActive(false);
             }
         }
         indexActive = 0;
@@ -50,6 +55,9 @@ public class Manager : MonoBehaviour
         {
             worldList[indexActive].SetActive(false);
             worldList[indexActive - 1].SetActive(true);
+
+            bgList[indexActive].SetActive(false);
+            bgList[indexActive - 1].SetActive(true);
             
             if(indexActive > 1){
                 LeftWorld.GetComponent<Image>().sprite = worldList[indexActive - 2].GetComponent<Image>().sprite;
@@ -77,6 +85,9 @@ public class Manager : MonoBehaviour
         {
             worldList[indexActive].SetActive(false);
             worldList[indexActive + 1].SetActive(true);
+
+            bgList[indexActive].SetActive(false);
+            bgList[indexActive + 1].SetActive(true);
             
             if(indexActive < worldList.Count - 2){
                 RightWorld.GetComponent<Image>().sprite = worldList[indexActive + 2].GetComponent<Image>().sprite;
