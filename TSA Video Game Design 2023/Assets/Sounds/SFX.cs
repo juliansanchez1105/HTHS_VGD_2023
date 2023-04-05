@@ -7,6 +7,10 @@ public class SFX : MonoBehaviour
     public AudioSource src;
     public AudioClip Bounce, Break, Button, Collision, Electric, Fry, Key, Laser, Launcher, Music, Switch;
 
+    void Awake(){
+        DontDestroyOnLoad(src);
+    }
+
     public void PlayBounce(){
         src.clip = Bounce;
         src.Play();
