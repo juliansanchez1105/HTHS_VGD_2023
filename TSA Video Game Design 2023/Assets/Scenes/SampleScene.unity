@@ -2962,7 +2962,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endvfx: {fileID: 721758159}
-  maxLength: 100
   colliderWidth: 0.2
 --- !u!114 &219507777
 MonoBehaviour:
@@ -9362,8 +9361,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4292292278
-  m_fontColor: {r: 0.7137255, g: 0.18039216, b: 0.8431373, a: 1}
+    rgba: 4281430820
+  m_fontColor: {r: 0.1426842, g: 0.4528302, b: 0.19264065, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -10977,7 +10976,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &829335715
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19257,14 +19256,14 @@ MonoBehaviour:
   m_VerticalScrollbarEventHandler: {fileID: 0}
   m_LayoutGroup: {fileID: 0}
   m_ScrollSensitivity: 1
-  m_ContentType: 0
+  m_ContentType: 3
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 2
   m_LineType: 0
   m_HideMobileInput: 0
   m_HideSoftKeyboard: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 3
   m_RegexValue: 
   m_GlobalPointSize: 25
   m_CharacterLimit: 0
@@ -21225,7 +21224,7 @@ GameObject:
   - component: {fileID: 1213808429}
   - component: {fileID: 1213808428}
   - component: {fileID: 1213808427}
-  - component: {fileID: 1213808426}
+  - component: {fileID: 1213808430}
   m_Layer: 5
   m_Name: Slot
   m_TagString: Untagged
@@ -21233,21 +21232,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1213808426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1213808425}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb71f667fce87cf4c94b1909dcb6a1a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parent: {fileID: 1708417944}
-  manager: {fileID: 2045049121}
-  ball: {fileID: 643926981}
 --- !u!114 &1213808427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21261,7 +21245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.29411766, g: 0.08627451, b: 0.34509805, a: 1}
+  m_Color: {r: 0.63584906, g: 1, b: 0.69450426, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -21306,6 +21290,23 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: 100, y: 60}
   m_Pivot: {x: 1, y: 0.5}
+--- !u!114 &1213808430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1213808425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2345fc16cb6c0148aeacab1b1722c7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 1708417944}
+  manager: {fileID: 2045049121}
+  ball: {fileID: 643926981}
+  bouncy: {fileID: 6200000, guid: 973004ca37177ee43b2d05545a8b8924, type: 2}
+  equation: {fileID: 6200000, guid: 44c6eeaf3e3574b418c658a477456aec, type: 2}
 --- !u!1 &1244550396
 GameObject:
   m_ObjectHideFlags: 0
@@ -27361,14 +27362,14 @@ MonoBehaviour:
   m_VerticalScrollbarEventHandler: {fileID: 0}
   m_LayoutGroup: {fileID: 0}
   m_ScrollSensitivity: 1
-  m_ContentType: 0
+  m_ContentType: 3
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 2
   m_LineType: 0
   m_HideMobileInput: 0
   m_HideSoftKeyboard: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 3
   m_RegexValue: 
   m_GlobalPointSize: 25
   m_CharacterLimit: 0
@@ -28549,7 +28550,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607845, g: 0.050980397, b: 0.23137257, a: 1}
+  m_Color: {r: 0.29411766, g: 0.87843144, b: 0.38823533, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -28641,14 +28642,14 @@ MonoBehaviour:
   m_VerticalScrollbarEventHandler: {fileID: 0}
   m_LayoutGroup: {fileID: 0}
   m_ScrollSensitivity: 1
-  m_ContentType: 0
+  m_ContentType: 3
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 2
   m_LineType: 0
   m_HideMobileInput: 0
   m_HideSoftKeyboard: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 3
   m_RegexValue: 
   m_GlobalPointSize: 25
   m_CharacterLimit: 0
@@ -28709,7 +28710,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1213808426}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EquationSlot, Assembly-CSharp
         m_MethodName: ChangeLine
         m_Mode: 1
@@ -28752,7 +28753,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7803922, g: 0.5137255, b: 0.8431373, a: 1}
+  m_Color: {r: 0.63529414, g: 1, b: 0.69411767, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -31429,14 +31430,14 @@ MonoBehaviour:
   m_VerticalScrollbarEventHandler: {fileID: 0}
   m_LayoutGroup: {fileID: 0}
   m_ScrollSensitivity: 1
-  m_ContentType: 0
+  m_ContentType: 3
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 2
   m_LineType: 0
   m_HideMobileInput: 0
   m_HideSoftKeyboard: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 3
   m_RegexValue: 
   m_GlobalPointSize: 25
   m_CharacterLimit: 0
@@ -31497,7 +31498,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1213808426}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: EquationSlot, Assembly-CSharp
         m_MethodName: ChangeLine
         m_Mode: 1
@@ -31540,7 +31541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7803922, g: 0.5137255, b: 0.8431373, a: 1}
+  m_Color: {r: 0.63529414, g: 1, b: 0.69411767, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -31745,7 +31746,7 @@ GameObject:
   - component: {fileID: 1708417947}
   - component: {fileID: 1708417946}
   m_Layer: 5
-  m_Name: EquationSlot1 (1)
+  m_Name: EquationSlot1 Bouncy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31787,7 +31788,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607845, g: 0.050980397, b: 0.23137257, a: 1}
+  m_Color: {r: 0.29300457, g: 0.8773585, b: 0.39085725, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

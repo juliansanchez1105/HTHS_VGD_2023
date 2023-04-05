@@ -7,13 +7,13 @@ public abstract class LineMaster : MonoBehaviour
 {
     public abstract float DomainStart{set; get;}
     public abstract float DomainEnd{set; get;}
-    [SerializeField] private LineRenderer lineRenderer;
-    [SerializeField] private float increment = 0.05f;
+    [SerializeField] protected LineRenderer lineRenderer;
+    [SerializeField] protected float increment = 0.05f;
     public abstract EdgeCollider2D Collider();
     public abstract float Equation(float x);
-    [SerializeField] private Ball ball;
-    [SerializeField] private Negation negation;
-    private bool startsNegated;
+    [SerializeField] protected Ball ball;
+    [SerializeField] protected Negation negation;
+    protected bool startsNegated;
     // Start is called before the first frame update
 
 
@@ -28,7 +28,7 @@ public abstract class LineMaster : MonoBehaviour
         GenerateCollider(Draw(new Vector3(DomainStart, 0.0f, 0.0f)));
     }
 
-    List<Vector2> Draw(Vector3 startPoint)
+    public virtual List<Vector2> Draw(Vector3 startPoint)
     {
         //need to add buttons for domain, show or not show, delete
         List<Vector2> points = new List<Vector2>();
@@ -75,7 +75,7 @@ public abstract class LineMaster : MonoBehaviour
 
     }
 
-    private bool ValidY(float y){
+    protected bool ValidY(float y){
         if(y > -1 * ball.DeathValY && y < ball.DeathValY){
             if(negation){
                 if(y >= negation.TopLeft.y || y <= negation.BottomRight.y){
@@ -94,7 +94,7 @@ public abstract class LineMaster : MonoBehaviour
         }
     }
 
-    private bool ValidX(float x){
+    protected bool ValidX(float x){
         if(negation){
             if(x <= negation.TopLeft.x || x >= negation.BottomRight.x){
                 return true;

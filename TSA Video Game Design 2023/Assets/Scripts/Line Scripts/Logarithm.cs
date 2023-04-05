@@ -29,13 +29,66 @@ public class Logarithm : LineMaster, ILine
 
     // Start is called before the first frame update
 
+    public override List<Vector2> Draw(Vector3 startPoint)
+    {
+        //need to add buttons for domain, show or not show, delete
+        List<Vector2> points = new List<Vector2>();
+
+        if(-1 * ball.DeathValX > DomainStart){
+            DomainStart = -1 * ball.DeathValX;
+        }
+        if(!ValidX(DomainStart) && !ValidY(Equation(DomainStart))){
+            startsNegated = true;
+        }
+        else{
+            startsNegated = false;
+        }
+        if(ball.DeathValX < DomainEnd){
+            DomainEnd = ball.DeathValX;
+        }
+        DomainStart = domainStart;
+        float x = DomainStart;
+        float y;
+        lineRenderer.positionCount = (int)((DomainEnd-DomainStart) * (1/increment)) + 1;
+        if(a > 0 && DomainStart == c){
+            lineRenderer.SetPosition(0, new Vector3(c, ball.DeathValY * -1, 0));
+            points.Add(new Vector2(c, ball.DeathValY * -1));
+        }
+        else if(a < 0 && DomainStart == c){
+            lineRenderer.SetPosition(0, new Vector3(c, ball.DeathValY, 0));
+            points.Add(new Vector2(c, ball.DeathValY));
+        }
+        else{
+            lineRenderer.positionCount--;
+        }
+        for (int i = 1; i < lineRenderer.positionCount; i++)
+        {
+            x += increment;
+            y = Equation(x);
+            if(ValidY(y) || ValidX(x)){
+                lineRenderer.SetPosition(i, new Vector3(x, y, 0));
+                points.Add(new Vector2(x, y));
+            }
+            else if(startsNegated){
+                lineRenderer.positionCount--;
+                i--;
+            }
+            else{
+                lineRenderer.positionCount = i - 1;
+                break;
+            }
+        }
+        
+        return points;
+    }
+
     public override float DomainStart{
         set{
-            if(value >= -1 * c){
+            if(value >= c){
                 domainStart = value;
             }
             else{
-                domainStart = -1 * c;
+                domainStart = c;
             }
             //Debug.Log("DomainStart: " + domainStart);
         }

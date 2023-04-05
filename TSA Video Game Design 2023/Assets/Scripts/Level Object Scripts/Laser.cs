@@ -7,7 +7,7 @@ public class Laser : MonoBehaviour
     private LineRenderer lineRenderer;
     [SerializeField] private GameObject endvfx;
     // Start is called before the first frame update
-    [SerializeField] private float maxLength = 100f;
+    private float maxLength = 100f;
     [SerializeField] private float colliderWidth = 0.2f;
     void Start()
     {
