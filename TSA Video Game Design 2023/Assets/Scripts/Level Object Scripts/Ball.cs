@@ -32,6 +32,7 @@ public class Ball : MonoBehaviour
 
     public void Respawn(){
         rb.velocity = new Vector3(0, 0, 0);
+        rb.angularVelocity = 0f;
         transform.position = spawnPoint;
         GetComponent<Rigidbody2D>().gravityScale = Mathf.Abs(GetComponent<Rigidbody2D>().gravityScale);
     }

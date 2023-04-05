@@ -17173,6 +17173,7 @@ MonoBehaviour:
   StarCollected: {fileID: 1732373007}
   StarDisplayed: {fileID: 105187079}
   Menu: {fileID: 127848395}
+  level: 0
   environment: {fileID: 847922875}
 --- !u!114 &937218073
 MonoBehaviour:
@@ -17186,6 +17187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a816787c19e00ff4cbdb4d61c131b3d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levels: []
 --- !u!114 &937218074
 MonoBehaviour:
   m_ObjectHideFlags: 0
