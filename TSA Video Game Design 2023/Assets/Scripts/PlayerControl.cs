@@ -22,6 +22,7 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] private GameObject StarCollected;
     [SerializeField] private GameObject StarDisplayed;
     [SerializeField] private GameObject Menu;
+    [SerializeField] private int level;
 
     [SerializeField] private Environment environment;
     //[SerializeField] private float winScreenDelay = 3;
@@ -123,6 +124,7 @@ public class PlayerControl : MonoBehaviour
         if(StarCollected.activeSelf == false){
             StarDisplayed.SetActive(true);
             StarCollected.SetActive(false);
+            AccessCards.SetCardTrue(level);
         }
         else{
             StarDisplayed.SetActive(false);
