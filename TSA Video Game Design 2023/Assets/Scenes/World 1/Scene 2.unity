@@ -6469,7 +6469,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2045049121}
         m_TargetAssemblyTypeName: PlayerControl, Assembly-CSharp
         m_MethodName: timeStop
         m_Mode: 1
@@ -6481,7 +6481,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 643926981}
         m_TargetAssemblyTypeName: Ball, Assembly-CSharp
         m_MethodName: Death
         m_Mode: 1
@@ -8247,7 +8247,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2045049121}
         m_TargetAssemblyTypeName: PlayerControl, Assembly-CSharp
         m_MethodName: timeStop
         m_Mode: 1
@@ -8259,7 +8259,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 643926981}
         m_TargetAssemblyTypeName: Ball, Assembly-CSharp
         m_MethodName: Death
         m_Mode: 1
@@ -15423,7 +15423,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2045049121}
         m_TargetAssemblyTypeName: PlayerControl, Assembly-CSharp
         m_MethodName: timeStop
         m_Mode: 1
@@ -15435,7 +15435,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 643926981}
         m_TargetAssemblyTypeName: Ball, Assembly-CSharp
         m_MethodName: Death
         m_Mode: 1
@@ -16344,7 +16344,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2045049121}
         m_TargetAssemblyTypeName: PlayerControl, Assembly-CSharp
         m_MethodName: timeStop
         m_Mode: 1
@@ -16356,7 +16356,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 643926981}
         m_TargetAssemblyTypeName: Ball, Assembly-CSharp
         m_MethodName: Death
         m_Mode: 1
@@ -16692,7 +16692,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endvfx: {fileID: 559078201}
-  maxLength: 100
   colliderWidth: 0.2
 --- !u!120 &997322065
 LineRenderer:
