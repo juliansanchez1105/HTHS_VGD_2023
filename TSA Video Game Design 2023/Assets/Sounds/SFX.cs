@@ -4,59 +4,61 @@ using UnityEngine;
 
 public class SFX : MonoBehaviour
 {
-    public AudioSource Bounce;
-    public AudioSource Break;
-    public AudioSource Button;
-    public AudioSource Collision;
-    public AudioSource Electric;
-    public AudioSource Fry;
-    public AudioSource Key;
-    public AudioSource Laser;
-    public AudioSource Launcher;
-    public AudioSource Music;
-    public AudioSource Switch;
+    public AudioSource src;
+    public AudioClip Bounce, Break, Button, Collision, Electric, Fry, Key, Laser, Launcher, Music, Switch;
 
     public void PlayBounce(){
-        Bounce.Play();
+        src.clip = Bounce;
+        src.Play()
     }
 
     public void PlayBreak(){
-        Break.Play();
+        src.clip = Break;
+        src.Play();
     }
 
     public void PlayButton(){
-        Button.Play();
+        src.clip = Button;
+        src.Play();
     }
 
     public void PlayCollision(){
-        Collision.Play();
+        src.clip = Collision;
+        src.Play();
     }
 
     public void PlayElectric(){
-        Electric.Play();
+        src.clip = Electric;
+        src.Play();
     }
 
     public void PlayFry(){
-        Fry.Play();
+        src.clip = Fry;
+        src.Play();
     }
 
     public void PlayKey(){
-        Key.Play();
+        src.clip = Key;
+        src.Play();
     }
 
     public void PlayLaser(){
-        Laser.Play();
+        src.clip = Laser;
+        src.Play();
     }
 
     public void PlayLauncher(){
-        Launcher.Play();
+        src.clip = Launcher;
+        src.Play();
     }
 
     public void PlayMusic(){
-        Music.Play();
+        src.clip = Music;
+        src.Play();
     }
 
     public void PlaySwitch(){
-        Switch.Play();
+        src.clip = Switch;
+        src.Play();
     }
 }
