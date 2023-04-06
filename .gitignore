@@ -9,6 +9,7 @@
 [Bb]uilds/
 [Ll]ogs/
 [Mm]emoryCaptures/
+/[Uu]ser[Ss]ettings/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
@@ -58,3 +59,7 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+TSA Video Game Design 2023/UserSettings/EditorUserSettings.asset
+TSA Video Game Design 2023/UserSettings/Layouts/CurrentMaximizeLayout.dwlt
+TSA Video Game Design 2023/UserSettings/Layouts/default-2022.dwlt
+TSA Video Game Design 2023/UserSettings/Search.settings
