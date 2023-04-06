@@ -1750,14 +1750,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1549354980}
         m_TargetAssemblyTypeName: Sender, Assembly-CSharp
         m_MethodName: LoadWorld
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 8
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2249,14 +2249,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1549354980}
         m_TargetAssemblyTypeName: Sender, Assembly-CSharp
         m_MethodName: LoadWorld
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8823,14 +8823,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1549354980}
         m_TargetAssemblyTypeName: Sender, Assembly-CSharp
         m_MethodName: LoadWorld
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 7
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -20800,7 +20800,7 @@ MonoBehaviour:
   StarCollected: {fileID: 184494967}
   StarDisplayed: {fileID: 898041768}
   Menu: {fileID: 1372900425}
-  level: 0
+  level: 3
   environment: {fileID: 196009078}
 --- !u!114 &1549354980
 MonoBehaviour:
@@ -20814,7 +20814,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a816787c19e00ff4cbdb4d61c131b3d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levels: []
 --- !u!114 &1549354981
 MonoBehaviour:
   m_ObjectHideFlags: 0
