@@ -2653,7 +2653,8 @@ MonoBehaviour:
     domain and range, you can \u201Ctruncate\u201D the function to make your desired
     path. A domain is an interval of x-values where a function exists, while a range
     is the same interval but for y-values. A function\u2019s domain and range work
-    in tandem with each other, which will aid the process.\n"
+    in tandem with each other, which is why the game only allows for manipulation
+    of the domain.\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3637,27 +3638,30 @@ MonoBehaviour:
   m_text: 'There are numerous in-game elements that serve to both aid and complicate
     your quest:
 
-    Cannon: Launches you to different parts of the map
+    Cannon: Launches you in direction of orientation
 
     Accelerator:
     Increases your speed
 
-    Anti-Gravity Switch: Flips you upside down
+    Anti-Gravity Switch: Flips the direction of gravity
 
     Bouncy
     Wall: Lets you ricochet off
 
     Electric Wall: Kills you if touched
 
-    Normal
-    Wall
+    Breakable
+    Wall: Can be broken if you are moving fast enough
 
-    Laser
+    Normal Wall
 
-    Laser On/Off Switch: Allows you to disable the laser
+    Laser:
+    Kills you if touched, but can be disabled
 
-    Key
-    Card: Gives you access to the nuclear base'
+    Laser On/Off Switch: Allows you
+    to disable the laser
+
+    Key Card: Gives you access to the nuclear base'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
