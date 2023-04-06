@@ -7340,7 +7340,7 @@ MonoBehaviour:
   Canvas: {fileID: 1432239047}
   StarCollected: {fileID: 1705613627}
   StarDisplayed: {fileID: 1728112801}
-  Menu: {fileID: 0}
+  Menu: {fileID: 791675011}
   level: 0
   environment: {fileID: 558302403}
 --- !u!114 &1136605249
