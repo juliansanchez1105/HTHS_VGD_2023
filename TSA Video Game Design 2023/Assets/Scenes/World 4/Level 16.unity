@@ -3637,8 +3637,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_Father: {fileID: 1169276396}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &747545612
 GameObject:
@@ -5474,7 +5474,7 @@ MonoBehaviour:
   StarCollected: {fileID: 1222780220}
   StarDisplayed: {fileID: 1249899237}
   Menu: {fileID: 663619531}
-  level: 0
+  level: 16
   environment: {fileID: 1169276395}
 --- !u!114 &1086840590
 MonoBehaviour:
@@ -5488,7 +5488,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a816787c19e00ff4cbdb4d61c131b3d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levels: []
 --- !u!114 &1086840591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5641,6 +5640,8 @@ Transform:
   - {fileID: 1406983328}
   - {fileID: 1222780224}
   - {fileID: 4314405}
+  - {fileID: 736687326}
+  - {fileID: 1348061566}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7010,8 +7011,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 1169276396}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &1355538341
 GameObject:
@@ -9265,7 +9266,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 19
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

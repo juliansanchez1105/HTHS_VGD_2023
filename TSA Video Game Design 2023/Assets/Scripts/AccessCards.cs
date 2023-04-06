@@ -4,14 +4,21 @@ using UnityEngine;
 
 public class AccessCards : MonoBehaviour
 {
-    private static List<int> cardsGotten = new List<int>();
+    private static Dictionary<int, bool> cards = new Dictionary<int, bool>();
+    private static int levelCount = 16;
     // Start is called before the first frame update
 
-    public static List<int> CardsGotten{
-        get{return cardsGotten;}
+    static AccessCards(){
+        for(int i = 1; i <= levelCount; i++){
+            cards[i] = false;
+        }
+    }
+    public static Dictionary<int, bool> Cards{
+        get{return cards;}
     }
 
     public static void SetCardTrue(int level){
-        cardsGotten.Add(level);
+        cards[level] = true;
+        Debug.Log(cards);
     }
 }
