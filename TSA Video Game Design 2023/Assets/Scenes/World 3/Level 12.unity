@@ -269,7 +269,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 14
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -713,7 +713,7 @@ MonoBehaviour:
   StarCollected: {fileID: 732852753}
   StarDisplayed: {fileID: 906427704}
   Menu: {fileID: 2037606028}
-  level: 0
+  level: 12
   environment: {fileID: 81811743}
 --- !u!114 &168757247
 MonoBehaviour:
@@ -727,7 +727,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a816787c19e00ff4cbdb4d61c131b3d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levels: []
 --- !u!114 &168757248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2201,7 +2200,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 20
+          m_IntArgument: 19
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2992,7 +2991,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 19
+          m_IntArgument: 18
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

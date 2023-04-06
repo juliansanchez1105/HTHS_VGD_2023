@@ -3653,7 +3653,7 @@ MonoBehaviour:
     Breakable
     Wall: Can be broken if you are moving fast enough
 
-    Normal Wall
+    Normal Wall: Stops movement
 
     Laser:
     Kills you if touched, but can be disabled

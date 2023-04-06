@@ -207,14 +207,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2045049124}
         m_TargetAssemblyTypeName: Sender, Assembly-CSharp
         m_MethodName: LoadWorld
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 7
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -18018,14 +18018,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2045049124}
         m_TargetAssemblyTypeName: Sender, Assembly-CSharp
         m_MethodName: LoadWorld
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -22914,14 +22914,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2045049124}
         m_TargetAssemblyTypeName: Sender, Assembly-CSharp
         m_MethodName: LoadWorld
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 6
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -23146,7 +23146,7 @@ MonoBehaviour:
   StarCollected: {fileID: 1447724733}
   StarDisplayed: {fileID: 1785090104}
   Menu: {fileID: 1587283964}
-  level: 0
+  level: 2
   environment: {fileID: 1507227706}
 --- !u!4 &2045049122
 Transform:
@@ -23188,7 +23188,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a816787c19e00ff4cbdb4d61c131b3d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levels: []
 --- !u!1 &2055618109
 GameObject:
   m_ObjectHideFlags: 0

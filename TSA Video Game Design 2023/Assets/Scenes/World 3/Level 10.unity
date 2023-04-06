@@ -318,7 +318,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 14
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -27314,7 +27314,7 @@ MonoBehaviour:
   StarCollected: {fileID: 1459496552}
   StarDisplayed: {fileID: 1386647708}
   Menu: {fileID: 1855647456}
-  level: 0
+  level: 10
   environment: {fileID: 634968949}
 --- !u!114 &1970320875
 MonoBehaviour:
@@ -27328,7 +27328,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a816787c19e00ff4cbdb4d61c131b3d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levels: []
 --- !u!114 &1970320876
 MonoBehaviour:
   m_ObjectHideFlags: 0

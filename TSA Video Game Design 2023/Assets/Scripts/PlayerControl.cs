@@ -121,10 +121,12 @@ public class PlayerControl : MonoBehaviour
         Canvas.GetComponent<ToggleVisibility>().TurnOff();
         timeStop();
         
-        if(StarCollected.activeSelf == false){
+        if(StarCollected.activeSelf == false || AccessCards.Cards[level] == true){
             StarDisplayed.SetActive(true);
             StarCollected.SetActive(false);
+            Debug.Log("level: " + level);
             AccessCards.SetCardTrue(level);
+            Debug.Log("AccessCards Finished");
         }
         else{
             StarDisplayed.SetActive(false);
