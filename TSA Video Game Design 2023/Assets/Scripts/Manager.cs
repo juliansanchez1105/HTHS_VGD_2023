@@ -13,6 +13,7 @@ public class Manager : MonoBehaviour
     [SerializeField] private GameObject RightWorld;
     [SerializeField] private GameObject worldBackgrounds;
     private List<GameObject> bgList = new List<GameObject>();
+    [SerializeField] private GameObject MissionComplete;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +39,19 @@ public class Manager : MonoBehaviour
         Vector4 color = worldList[indexActive + 1].GetComponent<Image>().color;
         RightWorld.GetComponent<Image>().color = new Color(color[0], color[1], color[2], 40);
 
+    }
+
+    void OnEnable(){
+        int count = 0;
+        for(int i = 1; i <= AccessCards.Cards.Count; i++){
+            if(AccessCards.Cards[i]){
+                count++;
+            }
+        }
+
+        if(count >= 8){
+            MissionComplete.SetActive(true);
+        }
     }
 
     public void LoadWorld(int num){

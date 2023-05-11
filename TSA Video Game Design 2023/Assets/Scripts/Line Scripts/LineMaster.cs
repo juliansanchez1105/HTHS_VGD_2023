@@ -71,6 +71,7 @@ public abstract class LineMaster : MonoBehaviour
 
     void GenerateCollider(List<Vector2> points)
     {
+        Debug.Log(points);
         Collider().SetPoints(points);
 
     }

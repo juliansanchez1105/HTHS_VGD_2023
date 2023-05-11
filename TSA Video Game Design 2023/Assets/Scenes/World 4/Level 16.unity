@@ -3582,8 +3582,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93ed48ebcdfa8c74792529e06ab125ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 0}
-  ball: {fileID: 0}
+  manager: {fileID: 1086840589}
+  ball: {fileID: 2021820615}
 --- !u!61 &736687324
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3691,7 +3691,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.25
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -7089,8 +7089,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93ed48ebcdfa8c74792529e06ab125ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 0}
-  ball: {fileID: 0}
+  manager: {fileID: 1086840589}
+  ball: {fileID: 2021820615}
 --- !u!61 &1348061564
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8417,7 +8417,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
